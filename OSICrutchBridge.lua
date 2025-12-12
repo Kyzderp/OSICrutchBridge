@@ -72,7 +72,7 @@ end
 
 local function Initialize()
     if (OSI) then
-        msg("You already have OdySupportIcons! ... or another OSI spoofer. No bridge allowed.")
+        msg("You already have OdySupportIcons! ... or another OSI spoofer. OSI-Crutch Bridge will not be activated at all.")
         return
     end
 
@@ -87,4 +87,3 @@ local function OnAddOnLoaded(_, addonName)
 end
  
 EVENT_MANAGER:RegisterForEvent(OCB.name, EVENT_ADD_ON_LOADED, OnAddOnLoaded)
-

@@ -19,7 +19,7 @@ local function ConvertTexture(texture)
         if (replacement) then
             return replacement.path, replacement.color
         end
-        -- TODO: map some textures
+        -- TODO: map more textures
         CrutchAlerts.dbgOther("|cFFFF00OSI-Crutch Bridge: no texture replacement available for " .. texture .. "; using poop instead.")
         return "CrutchAlerts/assets/poop.dds"
     end
@@ -57,7 +57,7 @@ function OCB.OSI.CreatePositionIcon(x, y, z, texture, size, color, offset, callb
         false, -- useDepthBuffer
         true) -- faceCamera
 
-    return key -- TODO: OSI returns a table, but hopefully no addons besides QRH use that?
+    return key -- TODO: OSI returns a table, but hopefully no addons besides QRH/ExoYs use that?
 end
 
 function OCB.OSI.DiscardPositionIcon(icon)
