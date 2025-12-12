@@ -16,8 +16,9 @@ This is only intended and tested for certain trial-specific addons. Use at your 
 * [ExoYs Support Icon Extention](https://www.esoui.com/downloads/info2913-ExoYsSupportIconExtention.html) - not supported ❌; you should use the icons in CrutchAlerts instead, or the real OSI
 * Others - TBD: There are myriad addons that depend on OSI. If OSI is a required dependency, Bridge does not support it ❌. If OSI is an optional dependency, it _may_ be supported, but I have not personally tested it.
 
-There is no support for Qcell's Rockgrove Helper and ExoYs Icon Extentions. OSI-Crutch Bridge will disable its functions inside Rockgrove, while ExoYs Icon Extentions requires the real OSI. These addons create text labels attached to the icons and do it for mechanics that Crutch or Code's Combat Alerts already cover too (besides cleanse pool cooldown and Defiling Blast), and OSI-Crutch Bridge is meant to be a stopgap until a fancier lib arrives, so I don't feel it's worth it to support/work around the text labels.
+There is no support for Qcell's Rockgrove Helper and ExoYs Support Icon Extention. OSI-Crutch Bridge will disable its functions inside Rockgrove, while ExoYs Support Icon Extention requires the real OSI. These addons create text labels attached to the icons and do it for mechanics that Crutch or Code's Combat Alerts already cover too (besides cleanse pool cooldown and Defiling Blast), and OSI-Crutch Bridge is meant to be a stopgap until a fancier lib arrives, so I don't feel it's worth it to support/work around the text labels.
 
 *Required dependencies: [CrutchAlerts](https://www.esoui.com/downloads/info3137-CrutchAlerts.html), [LibAddonMenu-2.0](https://www.esoui.com/downloads/info7-LibAddonMenu-2.0.html)*
 
-If you encounter any errors, please post the full error in the comments section if possible, so I can either support or exclude problematic functions.
+
+If you encounter any errors, please post the full error in the ESOUI comments section if possible, so I can either support or exclude problematic functions.
