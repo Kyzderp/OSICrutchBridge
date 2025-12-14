@@ -78,6 +78,7 @@ end
 
 local function Initialize()
     OCB.savedOptions = ZO_SavedVars:NewAccountWide("OSICrutchBridgeSavedVariables", 1, "Options", defaultOptions)
+    OCB.CreateSettingsMenu()
 
     if (OSI) then
         msg("You already have OdySupportIcons! ... or another OSI spoofer. OSI-Crutch Bridge will not be activated at all.")

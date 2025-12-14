@@ -41,4 +41,8 @@ local function CreateSettingsMenu()
             end,
         },
     }
+
+    LAM:RegisterAddonPanel("OSICrutchBridgeOptions", panelData)
+    LAM:RegisterOptionControls("OSICrutchBridgeOptions", optionsData)
 end
+OCB.CreateSettingsMenu = CreateSettingsMenu
