@@ -4,9 +4,8 @@ local function StartsWith(str, prefix)
     return string.sub(str, 1, #prefix) == prefix
 end
 
--- TODO: opacity setting
 local textures = {
-    ["odysupporticons/icons/green_arrow.dds"] = {path = "CrutchAlerts/assets/shape/chevron.dds", color = {0, 1, 0, 0.7}}
+    ["odysupporticons/icons/green_arrow.dds"] = {path = "CrutchAlerts/assets/shape/chevron.dds", color = {0, 1, 0}}
 }
 
 local function ConvertTexture(texture)
@@ -31,6 +30,8 @@ function OCB.OSI.GetIconSize()
     return OCB.savedOptions.size
 end
 
+local defaultColor = {1, 1, 1} -- opacity set later
+
 ---------------------------------------------------------------------
 function OCB.OSI.CreatePositionIcon(x, y, z, texture, size, color, offset, callback)
     if (callback) then
@@ -43,8 +44,11 @@ function OCB.OSI.CreatePositionIcon(x, y, z, texture, size, color, offset, callb
         if (replacementColor) then
             color = replacementColor
         else
-            color = CrutchAlerts.Constants.WHITE
+            color = defaultColor
         end
+    end
+    if (not color[4]) then
+        color[4] = OCB.savedOptions.opacity
     end
 
     offset = offset or 0
@@ -101,8 +105,11 @@ function OCB.OSI.SetMechanicIconForUnit(displayName, texture, size, color, offse
         if (replacementColor) then
             color = replacementColor
         else
-            color = CrutchAlerts.Constants.WHITE
+            color = defaultColor
         end
+    end
+    if (not color[4]) then
+        color[4] = OCB.savedOptions.opacity
     end
 
     local unitTag = GetUnitTagForName(displayName)
