@@ -28,7 +28,7 @@ end
 
 ---------------------------------------------------------------------
 function OCB.OSI.GetIconSize()
-    return 128 -- TODO: setting? or just inherit from crutch?
+    return OCB.savedOptions.size
 end
 
 ---------------------------------------------------------------------
@@ -48,6 +48,7 @@ function OCB.OSI.CreatePositionIcon(x, y, z, texture, size, color, offset, callb
     end
 
     offset = offset or 0
+    size = size or OCB.OSI.GetIconSize()
 
     local key = CrutchAlerts.Drawing.CreateWorldTexture(
         texture,
@@ -91,6 +92,8 @@ function OCB.OSI.SetMechanicIconForUnit(displayName, texture, size, color, offse
     if (callback) then
         CrutchAlerts.dbgOther("|cFFFF00OSI-Crutch Bridge doesn't support callback in CreatePositionIcon! Continuing...|r")
     end
+
+    size = size or OCB.OSI.GetIconSize()
 
     local replacementColor
     texture, replacementColor = ConvertTexture(texture)

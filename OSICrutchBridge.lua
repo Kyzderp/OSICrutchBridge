@@ -1,10 +1,16 @@
 OSICrutchBridge = {
     name = "OSICrutchBridge",
+    version = "0.0.0",
     OSI = {
         isFakeOSIStub = true, -- So other addons can check it? idk
     }
 }
 local OCB = OSICrutchBridge
+
+local defaultOptions = {
+    size = 128,
+    opacity = 0.7,
+}
 
 
 ---------------------------------------------------------------------
@@ -71,6 +77,8 @@ local function OnPlayerActivated()
 end
 
 local function Initialize()
+    OCB.savedOptions = ZO_SavedVars:NewAccountWide("OSICrutchBridgeSavedVariables", 1, "Options", defaultOptions)
+
     if (OSI) then
         msg("You already have OdySupportIcons! ... or another OSI spoofer. OSI-Crutch Bridge will not be activated at all.")
         return

@@ -11,7 +11,7 @@
 ## AddOnVersion: 0
 ## APIVersion: 101048
 
-## DependsOn: CrutchAlerts>=20800
+## DependsOn: CrutchAlerts>=20800 LibAddonMenu-2.0>=41
 ; Soft dependencies just so we load after them, not actually used
 ## OptionalDependsOn: OdySupportIcons
 
