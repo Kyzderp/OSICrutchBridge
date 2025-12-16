@@ -1,5 +1,14 @@
 local OCB = OSICrutchBridge
 
+-- We must keep track of active icons ourselves, because other addons
+-- can't be trusted with just the returned keys. If an addon decides
+-- to keep a list of icons they created and then clean it up much
+-- later, we need to be able to verify that the intended one is being
+-- deleted. We can't just delete via only key, which might make
+-- Crutch discard a key that's newly in use somewhere else.
+-- Use the table as the key so it can be checked by reference.
+local activeIcons = {} -- {{key = "Space3"} = true}
+
 local function StartsWith(str, prefix)
     return string.sub(str, 1, #prefix) == prefix
 end
@@ -62,16 +71,19 @@ function OCB.OSI.CreatePositionIcon(x, y, z, texture, size, color, offset, callb
         false, -- useDepthBuffer
         true) -- faceCamera
 
-    return key -- TODO: OSI returns a table, but hopefully no addons besides QRH/ExoYs use that?
+    -- TODO: OSI returns a table with functions etc, but hopefully no addons besides QRH/ExoYs use that?
+    local icon = {key = key, texture = texture}
+    activeIcons[icon] = true
+    return icon
 end
 
 function OCB.OSI.DiscardPositionIcon(icon)
-    -- It actually just takes the key
-    if (type(icon) ~= "string") then
-        CrutchAlerts.dbgOther("|cFF0000OSI-Crutch Bridge expects a key string for DiscardPositionIcon|r")
+    if (not activeIcons[icon]) then
+        CrutchAlerts.dbgOther("|cFF0000Something tried to DiscardPositionIcon an icon that's no longer active. |t100%:100%:" .. icon.texture .. "|t|r")
         return
     end
-    CrutchAlerts.Drawing.RemoveWorldTexture(icon)
+    activeIcons[icon] = nil
+    CrutchAlerts.Drawing.RemoveWorldTexture(icon.key)
 end
 
 ---------------------------------------------------------------------
