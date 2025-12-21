@@ -56,9 +56,7 @@ function OCB.OSI.CreatePositionIcon(x, y, z, texture, size, color, offset, callb
             color = defaultColor
         end
     end
-    if (not color[4]) then
-        color[4] = OCB.savedOptions.opacity
-    end
+    color[4] = OCB.savedOptions.opacity
 
     offset = offset or 0
     size = size or OCB.OSI.GetIconSize()
@@ -120,9 +118,7 @@ function OCB.OSI.SetMechanicIconForUnit(displayName, texture, size, color, offse
             color = defaultColor
         end
     end
-    if (not color[4]) then
-        color[4] = OCB.savedOptions.opacity
-    end
+    color[4] = OCB.savedOptions.opacity
 
     local unitTag = GetUnitTagForName(displayName)
     if (unitTag) then

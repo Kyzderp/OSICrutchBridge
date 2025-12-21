@@ -29,7 +29,7 @@ local function CreateSettingsMenu()
         {
             type = "slider",
             name = "Icon opacity",
-            tooltip = "General opacity of the icons. Individual addons may set their own opacity",
+            tooltip = "Opacity of the icons",
             min = 0,
             max = 100,
             step = 5,
