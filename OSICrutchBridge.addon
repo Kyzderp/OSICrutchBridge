@@ -7,8 +7,8 @@
 ## Title: OdySupportIcons-CrutchAlerts Bridge
 ## Description: Redirects OdySupportIcons functions to use CrutchAlerts' drawing functions
 ## Author: Kyzeragon
-## Version: 0.0.0
-## AddOnVersion: 0
+## Version: 1.0.0
+## AddOnVersion: 1
 ## APIVersion: 101048
 
 ## DependsOn: CrutchAlerts>=20800 LibAddonMenu-2.0>=41

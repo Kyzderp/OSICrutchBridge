@@ -77,7 +77,7 @@ end
 
 function OCB.OSI.DiscardPositionIcon(icon)
     if (not activeIcons[icon]) then
-        CrutchAlerts.dbgOther("|cFF0000Something tried to DiscardPositionIcon an icon that's no longer active. |t100%:100%:" .. icon.texture .. "|t|r")
+        CrutchAlerts.dbgSpam("|cFF0000Something tried to DiscardPositionIcon an icon that's no longer active. |t100%:100%:" .. icon.texture .. "|t|r")
         return
     end
     activeIcons[icon] = nil
@@ -130,7 +130,7 @@ function OCB.OSI.SetMechanicIconForUnit(displayName, texture, size, color, offse
             size,
             color)
     else
-        CrutchAlerts.dbgOther("|cFFFF00OSI-Crutch Bridge couldn't remove mechanic icon for " .. displayName .. "|r")
+        CrutchAlerts.dbgOther("|cFFFF00OSI-Crutch Bridge couldn't set mechanic icon for " .. displayName .. "|r")
     end
 end
 

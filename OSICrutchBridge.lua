@@ -1,6 +1,6 @@
 OSICrutchBridge = {
     name = "OSICrutchBridge",
-    version = "0.0.0",
+    version = "1.0.0",
     OSI = {
         isFakeOSIStub = true, -- So other addons can check it? idk
     }
